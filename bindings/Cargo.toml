@@ -1,0 +1,25 @@
+[package]
+name = "graphql-ffi-example-bindings"
+version = "0.1.0"
+description = "Example of using GraphQL with FFI as transport"
+authors = ["K.J. Valencik"]
+license = "MIT"
+edition = "2021"
+exclude = ["index.node"]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+graphql-ffi-example-server = { path = "../server" }
+juniper = "0.15.9"
+serde_json = "1.0.81"
+
+[dependencies.neon]
+version = "0.10.0"
+default-features = false
+features = ["napi-6"]
+
+[build-dependencies]
+graphql-ffi-example-server = { path = "../server" }
+
